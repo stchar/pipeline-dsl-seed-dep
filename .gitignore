@@ -1,0 +1,9 @@
+*.iml
+target
+.idea
+build
+.gradle
+*.swp
+.jobs
+.seed_ref
+.test_suites
