@@ -7,4 +7,11 @@
  * in the user guide at https://docs.gradle.org/4.10.2/userguide/multi_project_builds.html
  */
 
-rootProject.name = 'pipeline-dsl-seed-dep'
+pluginManagement {
+  plugins {
+    id 'com.mkobit.jenkins.pipelines.shared-library' version "0.10.1"
+    id 'org.jenkins-ci.jpi' version '0.38.0'
+  }
+}
+rootProject.name = 'template'
+

@@ -3,7 +3,7 @@ plugins {
   id "jacoco"
   id "java"
   id "groovy"
-//   id "org.jenkins-ci.jpi"
+  id "org.jenkins-ci.jpi" apply false
 }
 
 // In this section you declare where to find the dependencies of your project
