@@ -7,15 +7,15 @@ try {
 
 template_job = [
   name:"template",
-  dsl:(String) "$PROJECT_ROOT/dsl/template.groovy",
-  pipeline:[(String) "$PROJECT_ROOT/pipeline/template.groovy",(String) "$PROJECT_ROOT/pipeline/template.groovy"]
+  dsl:  "$PROJECT_ROOT/dsl/template.groovy",
+  pipeline:["$PROJECT_ROOT/pipeline/template.groovy","$PROJECT_ROOT/pipeline/template.groovy"]
 ]
 
 return [
   name:"template",
   jobs:[template_job],
   test_suites: [
-    (String) "$PROJECT_ROOT/test/template_SUITE.groovy",
+    "$PROJECT_ROOT/test/template_SUITE.groovy",
   ],
   siteFilter:{return true}
 ]
