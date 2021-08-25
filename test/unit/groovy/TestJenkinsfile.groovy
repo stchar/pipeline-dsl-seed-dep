@@ -21,10 +21,11 @@ class TestJenkinsfile extends DeclarativePipelineTest {
       helper.registerAllowedMethod("writeFile", [Map])
       helper.registerAllowedMethod("readFile", [String], { name ->
         switch(name) {
-          case ".jobs":
-          //case ".test_suites":
+          case ".test_suites.json":
             println("calling readFile with args: ${name}")
-            return new File(name).text
+            // JPU cannot load scipts by absolute path
+            // return """["/Users/stanislav.ovchar/git/hcm/pipeline-dsl-seed-dep/jobs/template/test/template_SUITE.groovy"]"""
+            return """["template/test/template_SUITE.groovy"]"""
           default:
             return ""
         }

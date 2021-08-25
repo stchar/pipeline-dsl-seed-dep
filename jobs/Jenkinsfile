@@ -50,8 +50,10 @@ pipeline {
             steps {
                 script {
                     dir('pipeline-dsl-seed'){
-                        test_suites = evaluate((String) readFile(".test_suites"))
+                        test_suites = new groovy.json.JsonSlurper().parseText(readFile(".test_suites.json"))
+                        echo "test_suites = ${test_suites}"
                         for (suite in test_suites) {
+                            echo "suite = $suite"
                             load suite
                         }
                     }

@@ -31,14 +31,14 @@ This repository contains template of scripted Pipeline to act as depended projec
 ###  Testing
 ```
 ./gradlew test
-
-# Runing gradle behind a proxy
-./gradlew -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=3128 test
 ```
 ## Deployment
 Wrap `jobs/Jenkinsfile.groovy` as jenkins pipeline project and run it
+or register this repository as multibranch pipeline scm source
 
 
 #### Additional Links
+* https://jenkinsci.github.io/job-dsl-plugin/
 * https://github.com/stchar/pipeline-dsl-seed
 * https://github.com/lesfurets/JenkinsPipelineUnit
+* https://github.com/mkobit/jenkins-pipeline-shared-libraries-gradle-plugin
