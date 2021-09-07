@@ -1,0 +1,6 @@
+plugins:
+  - artifactId: "job-dsl"
+  - artifactId: "workflow-aggregator"
+  - artifactId: "git"
+  - artifactId: "ws-cleanup"
+

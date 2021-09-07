@@ -1,5 +1,4 @@
-def dep_url = "https://githu.com/stchar/pipeline-dsl-seed-dep"
-def seed_url = "https://githu.com/stchar/pipeline-dsl-seed"
+def seed_url = "https://github.com/stchar/pipeline-dsl-seed"
 
 
 pipeline {
@@ -7,13 +6,13 @@ pipeline {
         skipDefaultCheckout()
     }
     parameters {
-        string name: seed_ref, defaultValue:"master"
+        string name:"seed_ref", defaultValue: "master"
     }
     agent any
     stages {
         stage('prebuild') {
             steps {
-                dir('pipeline-dsl-dep') {
+                dir('pipeline-dsl-seed-dep') {
                     checkout scm
                 }
                 dir('pipeline-dsl-seed'){
@@ -36,7 +35,7 @@ pipeline {
              }
         }
         stage('deploy') {
-            when { branch "master" }
+            //when { branch "master" }
             steps {
                 // Call seeder script to deploy jobs in the configuration
                 dir('pipeline-dsl-seed'){

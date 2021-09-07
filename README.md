@@ -19,6 +19,8 @@ This repository contains template of scripted Pipeline to act as depended projec
 │       │   └── template.groovy       # pipeline script
 │       └── test
 │           └── template_SUITE.groovy # example of e2e test
+│
+├── plugins.yaml                # list of plugins needed by jeninsfile-runner
 └── src
     └── test
         └── groovy
@@ -32,9 +34,28 @@ This repository contains template of scripted Pipeline to act as depended projec
 ```
 ./gradlew test
 ```
+
+#### Jenkinsfile-runner
+install https://gist.github.com/stchar/b565b0270da156da92ccc4ca44c8cf7b
+to  ~/bin/ or any other location in PATH
+```
+# this is just an example of installation procedure
+mkdir -p ~/bin
+pushd ~/bin
+curl -o jfr-wrapper https://gist.githubusercontent.com/stchar/b565b0270da156da92ccc4ca44c8cf7b/raw/dc1ff16d3040d2dbb67a8b92970ce4859a6223f1/jfr-wrapper
+chmod +x jfr-wrapper
+popd
+```
+
+```
+# run jenkinsifile-runner
+jfr-wrapper
+```
+
 ## Deployment
 Wrap `jobs/Jenkinsfile.groovy` as jenkins pipeline project and run it
 or register this repository as multibranch pipeline scm source
+
 
 
 #### Additional Links
@@ -42,3 +63,5 @@ or register this repository as multibranch pipeline scm source
 * https://github.com/stchar/pipeline-dsl-seed
 * https://github.com/lesfurets/JenkinsPipelineUnit
 * https://github.com/mkobit/jenkins-pipeline-shared-libraries-gradle-plugin
+* https://github.com/jenkinsci/plugin-installation-manager-tool
+* https://github.com/jenkinsci/jenkinsfile-runner
